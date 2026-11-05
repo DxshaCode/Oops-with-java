@@ -1,0 +1,62 @@
+//compile time plomorphism
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+//run time polymorphism
+
+class Employee {
+
+    double calculatePay() {
+        return 0;
+    }
+}
+
+
+class FullTimeEmployee 
+      extends Employee {
+            
+    @Override
+    double calculatePay() {
+        return 50000;
+    }
+}
+
+class PartTimeEmployee
+      extends Employee {
+
+    @Override
+    double calculatePay() {
+        return 20000;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+          
+        Calculator c = new Calculator();
+
+        System.out.println("add two integers" + c.add(10, 20));
+        System.out.println("add three integers" + c.add(10, 20, 30));
+        System.out.println("add two double integers" + c.add(10.5, 20.5));
+
+        
+        Employee emp1 = new FullTimeEmployee();
+        System.out.println("full time employee:" + emp1.calculatePay());
+
+        Employee emp2 = new PartTimeEmployee();
+        System.out.println("part time employee:" + emp2.calculatePay());
+    }
+}
+
