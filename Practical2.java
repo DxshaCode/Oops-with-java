@@ -22,3 +22,69 @@ public class Main
 		c1.run();
 	}
 }
+//Multilevel inheritence
+class person{
+      void p(){
+            System.out.println("i am a person");
+      }
+}
+
+class Employee 
+      extends person{
+            void e(){
+                  System.out.println("i am an employee");
+            }
+      }
+      
+class Manager
+      extends Employee{
+            void m(){
+                  System.out.println("i am manager");
+            }
+      }
+public class Main
+{
+	public static void main(String[] args) {
+		Manager m1=new Manager();
+		m1.p();
+		m1.e();
+		m1.m();
+	}
+}
+
+//Hierarchical Inheritance
+class Shape{
+      void s(){
+            System.out.println("its a shape");
+      }
+}
+
+class Circle
+      extends Shape{
+            
+            void c(){
+                  System.out.println("its a circle");
+            }
+      
+}
+
+class Rectangle
+      extends Shape{
+            
+            void r(){
+                  System.out.println("its a rectangle");
+            }
+      
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Rectangle r1=new Rectangle();
+		r1.s();
+		r1.r();
+		
+		Circle c1=new Circle();
+		c1.s();
+		c1.c();
+	}
+}
